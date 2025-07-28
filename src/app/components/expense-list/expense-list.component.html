@@ -31,30 +31,4 @@
             </tbody>
         </table>
     </div>
-
-    <!-- Card View -->
-    <div class="row expense-cards d-flex flex-wrap justify-content-center">
-        <div class="col-md-4 col-sm-6 mb-4 d-flex" *ngFor="let expense of expenses">
-            <div class="card expense-card w-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <div class="mb-2">
-                        <span class="text-muted">Date:</span>
-                        <span class="font-weight-bold">{{ expense.date | date:'shortDate' }}</span>
-                    </div>
-                    <div class="mb-2">
-                        <span class="text-muted">Description:</span>
-                        <span>{{ expense.description }}</span>
-                    </div>
-                    <div class="mb-2">
-                        <span class="text-muted">Category:</span>
-                        <span class="badge badge-pill badge-primary px-3 py-1">{{ expense.category }}</span>
-                    </div>
-                    <div>
-                        <span class="text-muted">Amount:</span>
-                        <span class="font-weight-bold text-success">{{ expense.amount | currency }}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
