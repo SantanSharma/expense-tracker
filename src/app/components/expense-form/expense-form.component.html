@@ -19,16 +19,28 @@
     </div>
     <div class="form-group mb-2">
       <label for="expenseCategory">Category</label>
-      <select
-        id="expenseCategory"
-        class="form-control"
-        required
-        [(ngModel)]="expense.category"
-        name="category"
-      >
-        <option value="" disabled selected>Select category</option>
-        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
-      </select>
+      <div class="input-group">
+        <select
+          id="expenseCategory"
+          class="form-control"
+          required
+          [(ngModel)]="expense.category"
+          name="category"
+        >
+          <option value="" disabled selected>Select category</option>
+          <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+        </select>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="New category"
+          [(ngModel)]="newCategory"
+          name="newCategory"
+        >
+        <div class="input-group-append">
+          <button class="btn btn-info" type="button" (click)="addCategory()">Add</button>
+        </div>
+      </div>
     </div>
     <div class="form-group mb-2">
       <label for="expenseAmount">Amount</label>
