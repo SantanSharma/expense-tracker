@@ -1,0 +1,30 @@
+.navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+.btn-outline-light,
+.btn-light {
+  border-radius: 10px;
+  margin-right: 8px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-light.active,
+.btn-light.active {
+  background-color: #fff !important;
+  color: #007bff !important;
+  border-color: #fff !important;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .btn-outline-light, .btn-light {
+    font-size: 0.9rem;
+    padding: 4px 12px;
+  }
+}

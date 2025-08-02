@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Expense Dashboard</h2>
+  <div class="row">
+    <div class="col-md-6 col-lg-6 mb-4 d-flex align-items-stretch">
+      <div class="card w-100 p-3">
+        <h5 class="text-center mb-3">Monthly Expense Bar Chart</h5>
+        <div class="chart-box">
+          <canvas
+            baseChart
+            [data]="barChartData"
+            [type]="'bar'"
+            [options]="{ responsive: true, maintainAspectRatio: false }">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 mb-4 d-flex align-items-stretch">
+      <div class="card w-100 p-3">
+        <h5 class="text-center mb-3">Category-wise Pie Chart</h5>
+        <div class="chart-box">
+          <canvas
+            baseChart
+            [data]="pieChartData"
+            [type]="'pie'"
+            [options]="{ responsive: true, maintainAspectRatio: false }">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 mb-4 d-flex align-items-stretch">
+      <div class="card w-100 p-3">
+        <h5 class="text-center mb-3">Recent Expenses</h5>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let expense of expenses | slice:0:10">
+                <td>{{ expense.date | date:'shortDate' }}</td>
+                <td>{{ expense.category }}</td>
+                <td>{{ expense.amount | currency }}</td>
+                <td>{{ expense.description }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 mb-4 d-flex align-items-stretch">
+      <div class="card w-100 shadow-sm text-center p-4 d-flex flex-column justify-content-center">
+        <h5 class="mb-3">Highest Expense Category</h5>
+        <div *ngIf="highestCategory; else noData">
+          <span class="badge badge-pill badge-primary px-3 py-2" style="font-size:1.2rem;">
+            {{ highestCategory }}
+          </span>
+          <div class="mt-2 font-weight-bold text-success" style="font-size:1.3rem;">
+            {{ highestAmount | currency }}
+          </div>
+        </div>
+        <ng-template #noData>
+          <span class="text-muted">No expenses yet.</span>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
