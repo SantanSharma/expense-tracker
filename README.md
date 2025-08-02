@@ -1,6 +1,10 @@
+
+<img width="1262" height="582" alt="Screenshot 2025-08-02 at 10 45 31 PM" src="https://github.com/user-attachments/assets/e01318f2-d097-44e7-a63c-0d40f06eccbe" />
+
 # ExpenseTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+
 
 ## Development server
 
