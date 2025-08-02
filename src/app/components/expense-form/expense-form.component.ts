@@ -29,6 +29,8 @@ export class ExpenseFormComponent implements OnInit {
   ngOnInit() {
     // Load categories from localStorage or use defaults
     const savedCategories = localStorage.getItem('categories');
+    const today = new Date();
+    this.expense.date = today.toISOString().slice(0, 10);
     this.categories = savedCategories
       ? JSON.parse(savedCategories)
       : ['Food', 'Transport', 'Shopping', 'Bills', 'Entertainment', 'Other'];

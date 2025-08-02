@@ -27,6 +27,12 @@ export class ExpenseListComponent {
     localStorage.setItem('expenses', JSON.stringify(this.expenses));
   }
 
+  removeLocalStorage(){
+    localStorage.removeItem('expenses');
+    this.expenses = [];
+    alert('All expenses cleared from local storage.');
+  }
+
   goToAddExpense() {
     this.router.navigate(['/add-expense']);
   }
